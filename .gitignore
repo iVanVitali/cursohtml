@@ -1,3 +1,4 @@
+
 vendor/
 node_modules/
 
@@ -13,3 +14,7 @@ bootstrap/cache/
 
 # Rocketeer PHP task runner and deployment package. https://github.com/rocketeers/rocketeer
 .rocketeer/
+# Mac config directory file
+.DS_Store
+# PhpStorm idea directory
+/.idea
