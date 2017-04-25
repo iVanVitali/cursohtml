@@ -5,6 +5,7 @@
  * Date: 25/4/17
  * Time: 17:16
  */
+    namespace Ecom\Repo\Category;
 
     interface Category {
 
