@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@extends('layouts.main.navbar')
+@extends('layouts.main.top_nav')
 
 @section('content')
 <div class="container">

@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@extends('layouts.main.navbar')
+@extends('layouts.main.top_nav')
 
 @extends('layouts.main.slider')
 

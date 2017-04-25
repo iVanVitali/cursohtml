@@ -52,7 +52,5 @@
     <!-- Bootstrap Core JavaScript -->
     <script src="{{ asset('js/bootstrap.min.js') }}"></script>
 
-    <!-- Scripts -->
-    <script src="{{ asset('js/app_.js') }}"></script>
 </body>
 </html>
