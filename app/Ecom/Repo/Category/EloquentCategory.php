@@ -7,6 +7,8 @@
  */
     namespace Ecom\Repo\Category;
 
+    use Illuminate\Database\Eloquent\Model;
+
     class EloquentCategory implements CategoryInterface {
 
         protected $category;

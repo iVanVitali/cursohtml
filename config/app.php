@@ -177,6 +177,11 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
+        /*
+         * Repo Servide Providers...
+         */
+        Ecom\Repo\RepoServiceProvider::class,
+
     ],
 
     /*

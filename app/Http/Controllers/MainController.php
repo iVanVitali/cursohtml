@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Ecom\Repo\Category\CategoryInterface;
 
 class MainController extends Controller
 {

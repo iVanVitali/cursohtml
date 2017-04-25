@@ -7,7 +7,7 @@
  */
     namespace Ecom\Repo\Category;
 
-    interface Category {
+    interface CategoryInterface {
 
         /**
          * Get all categories
