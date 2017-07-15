@@ -7,8 +7,10 @@
  */
     namespace Ecom\Repo;
 
-    use App\Models\Category;
+    use Ecom\Category;
     use Ecom\Repo\Category\EloquentCategory;
+    use Ecom\Product;
+    use Ecom\Repo\Product\EloquentProduct;
     use Illuminate\Support\ServiceProvider;
 
 class RepoServiceProvider extends ServiceProvider {
@@ -22,6 +24,10 @@ class RepoServiceProvider extends ServiceProvider {
 
         $this->app->bind('Ecom\Repo\Category\CategoryInterface', function ($app) {
             return new EloquentCategory(new Category);
+        });
+
+        $this->app->bind('Ecom\Repo\Product\ProductInterface', function ($app) {
+            return new EloquentProduct(new Product);
         });
 
     }

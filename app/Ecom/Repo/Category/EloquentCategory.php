@@ -22,7 +22,7 @@
 
             $query = $this->category;
 
-            $categories = $query->get();
+            $categories = $query->all();
 
             return $categories;
         }

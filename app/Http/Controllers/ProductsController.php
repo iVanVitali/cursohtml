@@ -4,16 +4,13 @@ namespace App\Http\Controllers;
 
 use Ecom\Repo\Product\ProductInterface;
 use Illuminate\Http\Request;
-use Ecom\Repo\Category\CategoryInterface;
 
-class MainController extends Controller
+class ProductsController extends Controller
 {
-    protected $category;
     protected $product;
 
-    public function __construct(CategoryInterface $category, ProductInterface $product)
+    public function __construct(ProductInterface $product)
     {
-        $this->category = $category;
         $this->product = $product;
     }
 
@@ -24,11 +21,11 @@ class MainController extends Controller
      */
     public function index()
     {
-        $categories = $this->category->getAllCategories();
-
         $products = $this->product->getAllProducts();
 
-        return view('main',['categories' => $categories, 'products' => $products]);
+        return response()->json([
+            'data'  =>  $products->toArray()
+        ], 200);
     }
 
     /**
@@ -36,20 +33,13 @@ class MainController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
+        return response()->json([
+            'data'  => [
+                'message' => 'Create product'
+            ]
+        ], 200);
     }
 
     /**
@@ -60,18 +50,20 @@ class MainController extends Controller
      */
     public function show($id)
     {
-        //
-    }
+        $product = $this->product->getById($id);
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
+        if (!$product)
+        {
+            return response()->json([
+                'error' => [
+                    'message'   =>  'Product does not exist'
+                ]
+            ], 404);
+        }
+
+        return response()->json([
+            'data' => $product->toArray()
+        ], 200);
     }
 
     /**
@@ -83,7 +75,11 @@ class MainController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        return response()->json([
+            'data' => [
+                'message' => 'Product updated!'
+            ]
+        ], 200);
     }
 
     /**
@@ -92,8 +88,12 @@ class MainController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function delete($id)
     {
-        //
+        return response()->json([
+            'data' => [
+                'message' => 'Product was deleted!'
+            ]
+        ], 200);
     }
 }
