@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use App\Models\Product;
+use Ecom\Product;
 
 
 class DatabaseSeeder extends Seeder
@@ -15,7 +15,7 @@ class DatabaseSeeder extends Seeder
     {
         Product::truncate();
 
-        //$this->call(UsersTableSeeder::class);
+        $this->call(UsersTableSeeder::class);
         $this->call('ProductsTableSeeder');
     }
 }

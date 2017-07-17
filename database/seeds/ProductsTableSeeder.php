@@ -3,7 +3,7 @@
 use Illuminate\Database\Seeder;
 
 use Faker\Factory as Faker;
-use App\Models\Product;
+use Ecom\Product;
 
 class ProductsTableSeeder extends Seeder
 {
